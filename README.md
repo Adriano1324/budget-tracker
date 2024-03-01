@@ -26,6 +26,7 @@ Each component resides in its respective directory (backend and frontend), allow
 
 graphql
 Copy code
+```
 budget-tracker/
 │
 ├── backend/               # Backend directory
@@ -35,6 +36,7 @@ budget-tracker/
 ├── .gitignore             # Specifies intentionally untracked files to ignore
 ├── docker-compose.yml     # Docker Compose configuration
 └── README.md              # Project README file (you are here)
+```
 
 Contributing
 
