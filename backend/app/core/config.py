@@ -4,7 +4,7 @@ This module is creating settings object
 from typing import List, Union
 
 from neomodel import config
-from pydantic import validator  # pylint: disable=E0611
+from pydantic import field_validator  # pylint: disable=E0611
 from pydantic_settings import BaseSettings
 
 
@@ -22,13 +22,12 @@ class Settings(BaseSettings):
 
     NEO4J_CONN_STRING: str = ""
 
-    @validator("NEO4J_CONN_STRING", pre=False)
+    @field_validator("NEO4J_CONN_STRING", mode="before")
     def set_neo4j_config(  # noqa E501 pylint: disable=E0213
         cls, v: str
     ) -> str:  # noqa E501 pylint: disable=E0213
         config.DATABASE_URL = v  # default
         return v
-
 
     PROJECT_NAME: str = "budget tracker"
 

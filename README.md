@@ -28,6 +28,14 @@ graphql
 
 Copy code
 
+## Running project
+
+### Backend
+
+```sh
+docker compose up web
+```
+
 ## Project structure
 
 ```mermaid
