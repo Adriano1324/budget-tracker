@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: neo4j:5.15.0-community
+    environment:
+      NEO4J_AUTH: 'neo4j/testtest'
+    ports:
+      - '7687:7687'
+      - '7474:7474'
+
+  web:
+    build:
+      context: ./backend
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend/:/workdir
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
