@@ -38,7 +38,7 @@ docker compose up web
 
 ## Project structure
 
-```mermaid
+```
 budget-tracker/
 ├── backend                 # Backend directory
 │   ├── app                 # Backend source code
