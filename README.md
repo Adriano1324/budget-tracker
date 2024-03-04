@@ -1,45 +1,47 @@
 
-# Budget Management Monorepo
-This monorepo contains a budget management application that allows users to efficiently manage their finances. 
-The application is divided into two main components: the backend, responsible for handling data storage and business logic, and the frontend, providing a user-friendly interface to interact with the budget management system.
+# Budget Tracker Monorepo
+This monorepo contains a budget tracker application that allows users to efficiently manage their finances.
+The application is divided into two main components: the backend, responsible for handling data storage and business logic, and the frontend, providing a user-friendly interface to interact with the budget tracker system.
 
-Backend
+## Backend
 The backend of the application is built using FastAPI. It utilizes Neo4j as the database management system for storing budget-related data. 
 Additionally, the backend implements GraphQL for flexible and powerful querying of the budget data.
 
-Technologies Used:
-FastAPI
-Neo4j
-GraphQL
+### Technologies Used BE
+- FastAPI
+- Neo4j
+    - neomodel
+- GraphQL
+    - strawberry-graphql
 
-Frontend
+## Frontend
 The frontend component is developed using Next.js. Apollo Client is used to interact with the GraphQL API provided by the backend, facilitating data fetching and management on the client side.
 
-Technologies Used:
-Next.js
-Apollo Client
-Setup Instructions:
+### Technologies Used FE
+- Next.js
+- Apollo Client
+- Setup Instructions:
 
-Monorepo Structure
-This monorepo follows a structured approach to manage both the backend and frontend components within a single repository. 
-Each component resides in its respective directory (backend and frontend), allowing for independent development and testing while sharing common resources and configurations.
-
-graphql
-
-Copy code
 
 ## Running project
 
-### Backend
+
+### Running Backend
 
 ```sh
 docker compose up web
 ```
 
-## Project structure
+## Monorepo Structure
+This monorepo follows a structured approach to manage both the backend and frontend components within a single repository.
+Each component resides in its respective directory (backend and frontend), allowing for independent development and testing while sharing common resources and configurations.
 
-```
-budget-tracker/
+
+### Project structure
+
+```sh
+(budgetTracker) tree
+.
 ├── backend                 # Backend directory
 │   ├── app                 # Backend source code
 │   │   ├── api             # Definition of endpoints

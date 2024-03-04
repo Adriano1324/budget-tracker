@@ -1,5 +1,12 @@
 # Budget Tracker bakcend
 
+## Important links
+- GraphQL playground: `http://127.0.0.1:8000/api/v1/graphql`
+- Neo4j browser: `http://127.0.0.1:7474/`
+    - username: `neo4j`
+    - password: `testtest`
+
+
 ## Running tests with html report
 
 ```bash
