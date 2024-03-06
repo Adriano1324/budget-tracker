@@ -13,15 +13,14 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - name: Go to frontend
-        run: cd frontend
-      - name: List files
-        run: ls
       - name: Install dependencies
+        working-directory: ./frontend
         run: npm ci
       - name: Install Playwright Browsers
+        working-directory: ./frontend
         run: npx playwright install --with-deps
       - name: Run Playwright tests
+        working-directory: ./frontend
         run: npx playwright test
       - uses: actions/upload-artifact@v3
         if: always()
