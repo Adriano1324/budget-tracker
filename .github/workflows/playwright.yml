@@ -21,10 +21,10 @@ jobs:
         run: npx playwright install --with-deps
       - name: Build frontend
         working-directory: ./frontend
-        run: npm build
+        run: npm run build
       - name: Start frontend
         working-directory: ./frontend
-        run: npm start
+        run: npm run start
       - name: Run Playwright tests
         working-directory: ./frontend
         run: npx playwright test
