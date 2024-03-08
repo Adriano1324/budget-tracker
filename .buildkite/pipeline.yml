@@ -2,24 +2,20 @@ steps:
   - name: "Prepare envs"
     command: touch backend/.env
     artifact_paths: "backend/.env"
+
+  - wait: -
   - name: "Python black"
     command: "black . --check"
-    depends_on:
-      - "Prepare envs"
     plugins:
       - docker-compose#v3.7.0:
           run: web
   - name: "Python isort"
     command: "isort . --check"
-    depends_on:
-      - "Prepare envs"
     plugins:
       - docker-compose#v3.7.0:
           run: web
   - name: "Python pytest"
     command: "pytest ."
-    depends_on:
-      - "Prepare envs"
     plugins:
       - docker-compose#v3.7.0:
           run: web
