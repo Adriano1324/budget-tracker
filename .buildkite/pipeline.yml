@@ -1,6 +1,7 @@
 steps:
   - name: "Prepare envs"
-    command: "cp backend/.env.template backend/.env"
+    command: touch backend/.env
+    artifact_paths: "backend/.env"
   - name: ":python: black"
     command: "black . --check"
     plugins:
