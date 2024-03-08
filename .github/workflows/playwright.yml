@@ -11,18 +11,21 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
       - name: Install dependencies
         working-directory: ./frontend
-        run: npm ci
+        run: pnpm i
       - name: Install Playwright Browsers
         working-directory: ./frontend
         run: npx playwright install --with-deps
       - name: Build frontend
         working-directory: ./frontend
-        run: npm run build
+        run: pnpm run build
       - name: Run Playwright tests
         working-directory: ./frontend
-        run: npm run start & npx playwright test
+        run: pnpm run start & npx playwright test
       - uses: actions/upload-artifact@v4
         if: always()
         with:
