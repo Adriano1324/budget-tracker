@@ -1,0 +1,18 @@
+steps:
+  - name: "Prepare envs"
+    command: "cp backend/.env.template backend/.env"
+  - name: ":python: black"
+    command: "black . --check"
+    plugins:
+      - docker-compose#v3.7.0:
+          run: web
+  - name: ":python: isort"
+    command: "isort . --check"
+    plugins:
+      - docker-compose#v3.7.0:
+          run: web
+  - name: ":python: pytest"
+    command: "pytest ."
+    plugins:
+      - docker-compose#v3.7.0:
+          run: web
