@@ -3,7 +3,8 @@ steps:
     command: touch backend/.env
     artifact_paths: "backend/.env"
 
-  - wait: -
+  - wait: ~
+    continue_on_failure: true
   - name: "Python black"
     command: "black . --check"
     plugins:
