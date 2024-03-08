@@ -1,6 +1,6 @@
 steps:
   - name: "Prepare envs"
-    command: touch backend/.env
+    command: ./prepare_ci.sh
     artifact_paths: "backend/.env"
 
   - wait: ~
