@@ -1,8 +1,7 @@
 version: '3'
-x-docker-data-env: &env-file-info
-  env_file:
-    - path: ./backend/.env
-      required: false
+x-docker-data-env: &envs
+  environment:
+    - NEO4J_CONN_STRING=bolt://neo4j:testtest@db:7687
 
 x-docker-data: &docker-file-info
     build:
@@ -17,13 +16,13 @@ services:
       - 7687:7687
       - 7474:7474
   bk:
-    <<: *docker-file-info
-    env_file:
-      - ./backend/.env.template
+    <<:
+      - *docker-file-info
+      - *envs
   web:
     <<:
       - *docker-file-info
-      - *env-file-info
+      - *envs
     volumes:
       - ./backend/:/workdir
     ports:
