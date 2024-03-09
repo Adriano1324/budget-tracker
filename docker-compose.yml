@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3'
 services:
   db:
     image: neo4j:5.15.0-community
@@ -14,7 +14,7 @@ services:
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
     env_file:
       - path: ./backend/.env
-        required: false # Makes the file optional. Default value is 'true'
+        required: false
     volumes:
       - ./backend/:/workdir
     ports:
