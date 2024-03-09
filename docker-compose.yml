@@ -1,4 +1,13 @@
 version: '3'
+x-docker-data-env: &env-file-info
+  env_file:
+    - path: ./backend/.env
+      required: false
+
+x-docker-data: &docker-file-info
+    build:
+      context: ./backend
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 services:
   db:
     image: neo4j:5.15.0-community
@@ -7,18 +16,17 @@ services:
     ports:
       - 7687:7687
       - 7474:7474
-
-  backend: &backend
-    build:
-      context: ./backend
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+  bk:
+    <<: *docker-file-info
+    env_file:
+      - ./backend/.env.template
+  web:
+    <<:
+      - *docker-file-info
+      - *env-file-info
     volumes:
       - ./backend/:/workdir
     ports:
       - 8000:8000
     depends_on:
       - db
-  web:
-    <<: *backend
-    env_file:
-      - ./backend/.env
