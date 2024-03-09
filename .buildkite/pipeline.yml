@@ -3,14 +3,14 @@ steps:
     command: "black . --check"
     plugins:
       - docker-compose#v5.2.0:
-          run: web
+          run: backend
   - name: "Python isort"
     command: "isort . --check"
     plugins:
       - docker-compose#v5.2.0:
-          run: web
+          run: backend
   - name: "Python pytest"
     command: "pytest ."
     plugins:
       - docker-compose#v5.2.0:
-          run: web
+          run: backend
