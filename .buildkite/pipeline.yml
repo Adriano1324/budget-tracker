@@ -1,16 +1,16 @@
 steps:
-  - name: "Python black"
-    command: "black . --check"
+  - name: Python black
+    command: black . --check
     plugins:
       - docker-compose#v5.2.0:
-          run: backend
-  - name: "Python isort"
-    command: "isort . --check"
+          run: bk
+  - name: Python isort
+    command: isort . --check
     plugins:
       - docker-compose#v5.2.0:
-          run: backend
-  - name: "Python pytest"
-    command: "pytest ."
+          run: bk
+  - name: Python pytest
+    command: pytest .
     plugins:
       - docker-compose#v5.2.0:
-          run: backend
+          run: bk

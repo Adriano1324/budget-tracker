@@ -1,4 +1,4 @@
-name: "Python Docker"
+name: Python Docker
 steps:
-  - label: ":pipeline:"
-    command: "buildkite-agent pipeline upload"
+  - label: ':pipeline:'
+    command: buildkite-agent pipeline upload
