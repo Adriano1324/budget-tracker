@@ -21,5 +21,4 @@ services:
   web:
     <<: *backend
     env_file:
-      - path: ./backend/.env
-        required: false
+      - ./backend/.env
