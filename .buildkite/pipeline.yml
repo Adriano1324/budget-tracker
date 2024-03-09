@@ -1,10 +1,4 @@
 steps:
-  - name: "Prepare envs"
-    command: ./prepare_ci.sh
-    artifact_paths: "backend/.env"
-
-  - wait: ~
-    continue_on_failure: true
   - name: "Python black"
     command: "black . --check"
     plugins:
