@@ -49,6 +49,7 @@ steps:
         plugins:
           - docker-compose#v5.2.0:
               image: mcr.microsoft.com/playwright:v1.42.1-jammy
+              workdir: /app
               environment:
                 - BUILDKITE_BUILD_ID
                 - BUILDKITE_BUILD_NUMBER
