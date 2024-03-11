@@ -9,7 +9,7 @@ steps:
     plugins:
       - docker-compose#v5.2.0:
           run: bk
-  - name: :"isort:"
+  - name: ":isort:"
     command: isort --check-only app
     plugins:
       - docker-compose#v5.2.0:
