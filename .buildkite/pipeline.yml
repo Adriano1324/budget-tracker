@@ -1,26 +1,29 @@
 steps:
-  - name: ":mypy: mypy"
-    command: mypy app
-    plugins:
-      - docker-compose#v5.2.0:
-          run: bk
-  - name: ":python-black: black"
-    command: black app --check
-    plugins:
-      - docker-compose#v5.2.0:
-          run: bk
-  - name: ":isort: isort"
-    command: isort --check-only app
-    plugins:
-      - docker-compose#v5.2.0:
-          run: bk
-  - name: ":python: flake8"
-    command: flake8 app
-    plugins:
-      - docker-compose#v5.2.0:
-          run: bk
-  - name: ":pytest: pytest"
-    command: pytest .
-    plugins:
-      - docker-compose#v5.2.0:
-          run: bk
+  - group: ":python: backend"
+    key: "backend"
+    steps:
+      - name: ":mypy: mypy"
+        command: mypy app
+        plugins:
+          - docker-compose#v5.2.0:
+              run: bk
+      - name: ":python-black: black"
+        command: black app --check
+        plugins:
+          - docker-compose#v5.2.0:
+              run: bk
+      - name: ":isort: isort"
+        command: isort --check-only app
+        plugins:
+          - docker-compose#v5.2.0:
+              run: bk
+      - name: ":python: flake8"
+        command: flake8 app
+        plugins:
+          - docker-compose#v5.2.0:
+              run: bk
+      - name: ":pytest: pytest"
+        command: pytest .
+        plugins:
+          - docker-compose#v5.2.0:
+              run: bk
