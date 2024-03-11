@@ -1,6 +1,7 @@
 """
 This is main module resposnible for creating our app
 """
+
 import logging
 
 from fastapi import FastAPI

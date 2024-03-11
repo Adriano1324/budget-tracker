@@ -1,6 +1,7 @@
 """
 This module is creating settings object
 """
+
 from typing import List, Union
 
 from neomodel import config

@@ -1,6 +1,7 @@
 """
 This module is responsible for registering all routers
 """
+
 import strawberry
 from strawberry.fastapi import GraphQLRouter
 from strawberry.schema.config import StrawberryConfig
