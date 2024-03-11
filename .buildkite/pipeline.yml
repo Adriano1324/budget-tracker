@@ -1,15 +1,15 @@
 steps:
-  - name: ":mypy:"
+  - name: ":mypy: mypy"
     command: mypy app
     plugins:
       - docker-compose#v5.2.0:
           run: bk
-  - name: ":python-black:"
+  - name: ":python-black: black"
     command: black app --check
     plugins:
       - docker-compose#v5.2.0:
           run: bk
-  - name: ":isort:"
+  - name: ":isort: isort"
     command: isort --check-only app
     plugins:
       - docker-compose#v5.2.0:
@@ -19,7 +19,7 @@ steps:
     plugins:
       - docker-compose#v5.2.0:
           run: bk
-  - name: ":pytest:"
+  - name: ":pytest: pytest"
     command: pytest .
     plugins:
       - docker-compose#v5.2.0:
