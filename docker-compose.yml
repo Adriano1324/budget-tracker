@@ -29,9 +29,10 @@ services:
       - 8000:8000
     depends_on:
       - db
-  fe:
+  playwright:
     build:
       context: ./frontend
+      dockerfile: Dockerfile.playwright
     command: pnpm start
     volumes:
       - ./frontend/:/app
