@@ -39,13 +39,10 @@ steps:
   - group: ":node: frontend"
     key: frontend
     steps:
-      - name: ":playwright: playwright install deps"
-        command: npx playwright install --with-deps
-        plugins:
-          - docker-compose#v5.2.0:
-              run: fe
       - name: ":playwright: playwright run tests"
-        command: npx playwright test
+        commands:
+          - npx playwright install --with-deps
+          - npx playwright test
         plugins:
           - docker-compose#v5.2.0:
               run: fe
@@ -57,6 +54,6 @@ steps:
                 - BUILDKITE_COMMIT
                 - BUILDKITE_MESSAGE
                 - BUILDKITE_BUILD_URL
-                - BUILDKITE_ANALYTICS_TOKEN
+                - BUILDKITE_ANALYTICS_TOKEN_FE
           - artifacts:
               "playwright-report/*": playwright-report
