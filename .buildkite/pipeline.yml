@@ -42,13 +42,14 @@ steps:
       - name: ":playwright: playwright run tests"
         commands:
           - cd frontend
+          - npx -y playwright install --with-deps
           - npm install -g pnpm
           - pnpm install
           - pnpm build
           - pnpm run start & npx playwright test
         plugins:
           - docker-compose#v5.2.0:
-              image: mcr.microsoft.com/playwright:v1.42.1-jammy
+              image: node:21.7.1-alpine
               workdir: /app
               environment:
                 - BUILDKITE_BUILD_ID
