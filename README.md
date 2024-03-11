@@ -1,6 +1,6 @@
 
 
-[![Build status](https://badge.buildkite.com/f5bac8d9ed3dd9c9fe50287ea0e5da36731fa6ad02e19f1b99.svg)](https://buildkite.com/budget-tracker/budget-tracker)
+[![Build status](https://badge.buildkite.com/303eea5fcfe355a23e7666f1caf3eb1fb1b665d56cb07bb2a1.svg)](https://buildkite.com/budget-tracker/budget-tracker)
 
 # Budget Tracker Monorepo
 This monorepo contains a budget tracker application that allows users to efficiently manage their finances.
