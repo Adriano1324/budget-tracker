@@ -50,7 +50,7 @@ steps:
         plugins:
           - docker-compose#v5.2.0:
               image: node:21.7.1-alpine
-              workdir: /app
+              run: test
               environment:
                 - BUILDKITE_BUILD_ID
                 - BUILDKITE_BUILD_NUMBER
