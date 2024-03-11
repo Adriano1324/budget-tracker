@@ -41,8 +41,7 @@ steps:
     steps:
       - name: ":playwright: playwright run tests"
         commands:
-          - npx playwright install --with-deps
-          - npx playwright test
+          - pnpm run start & npx playwright test
         plugins:
           - docker-compose#v5.2.0:
               run: fe
