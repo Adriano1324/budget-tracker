@@ -1,9 +1,11 @@
 
+
+[![Build status](https://badge.buildkite.com/f5bac8d9ed3dd9c9fe50287ea0e5da36731fa6ad02e19f1b99.svg)](https://buildkite.com/budget-tracker/budget-tracker)
+
 # Budget Tracker Monorepo
 This monorepo contains a budget tracker application that allows users to efficiently manage their finances.
 The application is divided into two main components: the backend, responsible for handling data storage and business logic, and the frontend, providing a user-friendly interface to interact with the budget tracker system.
 
-## Buildkite
 
 ## Backend
 The backend of the application is built using FastAPI. It utilizes Neo4j as the database management system for storing budget-related data. 
