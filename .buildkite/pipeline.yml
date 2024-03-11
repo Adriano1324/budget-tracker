@@ -49,8 +49,7 @@ steps:
         plugins:
           - docker#v5.10.0:
               image: mcr.microsoft.com/playwright:v1.42.1-jammy
-              volumes:
-                - ./frontend/:/workdir/frontend
+
               environment:
                 - BUILDKITE_BUILD_ID
                 - BUILDKITE_BUILD_NUMBER
@@ -60,5 +59,3 @@ steps:
                 - BUILDKITE_MESSAGE
                 - BUILDKITE_BUILD_URL
                 - BUILDKITE_ANALYTICS_TOKEN_FE
-          - artifacts:
-              "frontend/playwright-report/*": playwright-report
