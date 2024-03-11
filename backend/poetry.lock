@@ -1253,13 +1253,13 @@ starlite = ["starlite (>=1.48.0)"]
 
 [[package]]
 name = "types-passlib"
-version = "1.7.7.20240106"
+version = "1.7.7.20240311"
 description = "Typing stubs for passlib"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "types-passlib-1.7.7.20240106.tar.gz", hash = "sha256:2231ae83d1dd9e485b7ec6041d81b4f9c66403d1767360e860605a90db48ea27"},
-    {file = "types_passlib-1.7.7.20240106-py3-none-any.whl", hash = "sha256:347aa64d4c2bc239f3765fe38fc79dad3d67f9def7b3ea721daaaaa835a91dad"},
+    {file = "types-passlib-1.7.7.20240311.tar.gz", hash = "sha256:287dd27cec5421daf6be5c295f681baf343c146038c8bde4db783bcac1beccb7"},
+    {file = "types_passlib-1.7.7.20240311-py3-none-any.whl", hash = "sha256:cd44166e9347ae516f4830046cd1673c1ef90a5cc7ddd1356cf8a14892f29249"},
 ]
 
 [[package]]
@@ -1336,4 +1336,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "f4d5aa558c9f0f8c699eb2b452eb58c8accf02851bd04c835d952f61bd7a1c54"
+content-hash = "9b3d0a4ef0011c2c356e258c02a852147ee4cdd83acf6fe87569fb733ce70106"
