@@ -27,3 +27,11 @@ steps:
         plugins:
           - docker-compose#v5.2.0:
               run: bk
+              environment:
+                - BUILDKITE_BUILD_ID
+                - BUILDKITE_BUILD_NUMBER
+                - BUILDKITE_JOB_ID
+                - BUILDKITE_BRANCH
+                - BUILDKITE_COMMIT
+                - BUILDKITE_MESSAGE
+                - BUILDKITE_BUILD_URL
