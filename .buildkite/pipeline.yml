@@ -39,15 +39,24 @@ steps:
   - group: ":node: frontend"
     key: frontend
     steps:
-      - label: ":rocket: Playwright Tests"
-        branches: main
-        commands:
-          - checkout
-          - cd frontend
-          - pnpm install # Using pnpm for dependency installation
-          - npx playwright install --with-deps
-          - pnpm run build
-          - pnpm run start & npx playwright test
+      - name: ":playwright: playwright install deps"
+        command: npx playwright install --with-deps
         plugins:
+          - docker-compose#v5.2.0:
+              run: fe
+      - name: ":playwright: playwright run tests"
+        command: npx playwright test
+        plugins:
+          - docker-compose#v5.2.0:
+              run: fe
+              environment:
+                - BUILDKITE_BUILD_ID
+                - BUILDKITE_BUILD_NUMBER
+                - BUILDKITE_JOB_ID
+                - BUILDKITE_BRANCH
+                - BUILDKITE_COMMIT
+                - BUILDKITE_MESSAGE
+                - BUILDKITE_BUILD_URL
+                - BUILDKITE_ANALYTICS_TOKEN
           - artifacts:
-              "frontend/playwright-report/*": playwright-report
+              "playwright-report/*": playwright-report
