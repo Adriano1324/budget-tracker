@@ -33,3 +33,5 @@ services:
     build:
       context: ./frontend
     command: pnpm start
+    volumes:
+      - ./frontend/:/app

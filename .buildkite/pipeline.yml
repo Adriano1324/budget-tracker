@@ -55,4 +55,4 @@ steps:
                 - BUILDKITE_BUILD_URL
                 - BUILDKITE_ANALYTICS_TOKEN_FE
           - artifacts:
-              "playwright-report/*": playwright-report
+              "frontend/playwright-report/*": playwright-report
