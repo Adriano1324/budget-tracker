@@ -40,9 +40,15 @@ steps:
     key: frontend
     steps:
       - name: ":playwright: playwright run tests"
-        command: pnpm run start & npx playwright test
+        commands:
+          - npm install -g pnpm
+          - pnpm install
+          - pnpm build
+          - pnpm run start & npx playwright test
         plugins:
           - docker-compose#v5.2.0:
+              image: mcr.microsoft.com/playwright:v1.42.1-jammy
+              workdir: /frontend
               run: playwright
               environment:
                 - BUILDKITE_BUILD_ID
