@@ -64,6 +64,9 @@ devDependencies:
   autoprefixer:
     specifier: ^10.0.1
     version: 10.4.18(postcss@8.4.35)
+  buildkite-test-collector:
+    specifier: ^1.7.0
+    version: 1.7.0
   eslint:
     specifier: ^8
     version: 8.57.0
@@ -5512,6 +5515,16 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
+  /axios@1.6.7:
+    resolution: {integrity: sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==}
+    dependencies:
+      follow-redirects: 1.15.5
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
   /axobject-query@3.2.1:
     resolution: {integrity: sha512-jsyHu61e6N4Vbz/v18DHwWYKK0bSWLqn47eeDSKPB7m8tqMHF9YJ+mhIk2lVteyZrY8tnSj/jHOv4YiTCuCJgg==}
     dependencies:
@@ -5873,6 +5886,19 @@ packages:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
+    dev: true
+
+  /buildkite-test-collector@1.7.0:
+    resolution: {integrity: sha512-R2t3KfBmGCu8fllmZ5GBzOyLJxfB2CEwwgOOtLTleKrHLDPXDal+YLz09okOVL0DE+d5GaGhELwY1MD3xfwE4A==}
+    engines: {npm: '>=7.0.0'}
+    dependencies:
+      axios: 1.6.7
+      dotenv: 16.4.5
+      request-spy: 0.0.10
+      strip-ansi: 6.0.1
+      uuid: 8.3.2
+    transitivePeerDependencies:
+      - debug
     dev: true
 
   /builtin-status-codes@3.0.0:
@@ -7773,6 +7799,16 @@ packages:
     engines: {node: '>=0.4.0'}
     dev: true
 
+  /follow-redirects@1.15.5:
+    resolution: {integrity: sha512-vSFWUON1B+yAw1VN4xMfxgn5fTUiaOzAJCKBwIIgT/+7CuGy9+r+5gITvP62j3RmaD5Ph65UaERdOSRGUzZtgw==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dev: true
+
   /for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -9540,6 +9576,10 @@ packages:
     hasBin: true
     dev: true
 
+  /monkeypatch@1.0.0:
+    resolution: {integrity: sha512-6tG0IrCUUIBuAspnbdmOAd+D/AptB/ya9JLujp88NIAuFuTGdGvCKtDkc6pwNOcIJ6nKLm3FjJlaCdx8vr3r2w==}
+    dev: true
+
   /ms@2.0.0:
     resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
     dev: true
@@ -11000,6 +11040,12 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
+  /request-spy@0.0.10:
+    resolution: {integrity: sha512-va+4vLamK9Pwu/WJnJrQcTjCjYdIcl0KDKOKEkfvNmer4f+K+OhgbpU4DCiPyzBGnTpYXbrVLrnD8O5fS/cmKA==}
+    dependencies:
+      monkeypatch: 1.0.0
+    dev: true
+
   /require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
@@ -12423,6 +12469,11 @@ packages:
   /utils-merge@1.0.1:
     resolution: {integrity: sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==}
     engines: {node: '>= 0.4.0'}
+    dev: true
+
+  /uuid@8.3.2:
+    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    hasBin: true
     dev: true
 
   /uuid@9.0.1:

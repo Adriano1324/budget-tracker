@@ -1,6 +1,6 @@
 steps:
   - group: ":python: backend"
-    key: "backend"
+    key: backend
     steps:
       - name: ":mypy: mypy"
         command: mypy app
@@ -36,3 +36,18 @@ steps:
                 - BUILDKITE_MESSAGE
                 - BUILDKITE_BUILD_URL
                 - BUILDKITE_ANALYTICS_TOKEN
+  - group: ":node: frontend"
+    key: frontend
+    steps:
+      - label: ":rocket: Playwright Tests"
+        branches: main
+        commands:
+          - checkout
+          - cd frontend
+          - pnpm install # Using pnpm for dependency installation
+          - npx playwright install --with-deps
+          - pnpm run build
+          - pnpm run start & npx playwright test
+        plugins:
+          - artifacts:
+              "frontend/playwright-report/*": playwright-report
