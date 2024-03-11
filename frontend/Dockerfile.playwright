@@ -1,6 +1,0 @@
-FROM mcr.microsoft.com/playwright:v1.42.1-jammy
-COPY . /workdir
-WORKDIR /workdir
-RUN npm install -g pnpm
-RUN pnpm install
-RUN pnpm build
