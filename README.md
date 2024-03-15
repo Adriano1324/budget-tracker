@@ -28,6 +28,7 @@ The frontend component is developed using Next.js. Apollo Client is used to inte
 
 
 ## Running project
+Described in each module
 
 
 ### Running Backend
