@@ -8,6 +8,8 @@ The application is divided into two main components: the backend, responsible fo
 
 ## CI/CD
 
+### Buildkite
+
 ## Backend
 The backend of the application is built using FastAPI. It utilizes Neo4j as the database management system for storing budget-related data. 
 Additionally, the backend implements GraphQL for flexible and powerful querying of the budget data.
