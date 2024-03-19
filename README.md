@@ -90,5 +90,8 @@ Each component resides in its respective directory (backend and frontend), allow
 
 Contributions to this project are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or create a pull request. Make sure to follow the contribution guidelines outlined in the repository.
 
+
+## 100 competition
+
 ## License
 This project is licensed under the MIT License.
