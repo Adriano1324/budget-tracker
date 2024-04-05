@@ -94,7 +94,7 @@ Contributions to this project are welcome! If you find any issues or have sugges
 ## 100 competition
 
 ### Number off commits to extend streak
-IIIIIIIIIIIIII
+IIIIIIIIIIIIIII
 
 ## License
 This project is licensed under the MIT License.
