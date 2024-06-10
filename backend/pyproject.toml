@@ -11,7 +11,7 @@ python = "^3.11"
 fastapi = "^0.110.0"
 uvicorn = "^0.27.1"
 neomodel = "^5.2.1"
-pydantic = "^2.5.3"
+pydantic = "^2.7.3"
 pydantic-settings = "^2.1.0"
 strawberry-graphql = {extras = ["fastapi"], version = "^0.219.1"}
 python-jose = {extras = ["cryptography"], version = "^3.3.0"}
